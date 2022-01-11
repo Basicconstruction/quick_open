@@ -53,9 +53,18 @@ public class UiStarter extends JFrame {
 //        cont.setBackground(Color.RED);
         JButton smuggleButton = new JButton("smuggle");
         cont.add(smuggleButton);
-        smuggleButton.setBounds(50,20,100,40);
+        smuggleButton.setBounds(50,70,100,40);
         smuggleButton.addActionListener(e->{
             smuggle();
+        });
+
+        JButton big = new JButton("big");
+        cont.add(big);
+        big.setBounds(50,20,100,40);
+        big.addActionListener(e->{
+            UiStarter.this.setVisible(false);
+            Utils.temporaryCar.setLocation(Math.min(UiStarter.this.getX(), 1400),UiStarter.this.getY());
+            Utils.temporaryCar.setVisible(true);
         });
 
 

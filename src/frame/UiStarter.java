@@ -14,7 +14,7 @@ public class UiStarter extends JFrame {
     public int ui_height = 200;
 
     public UiStarter(){
-        super();
+        super("quick_open");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setDefaultLookAndFeelDecorated(false);
         setSize(ui_width+Utils.x,ui_height+Utils.y);

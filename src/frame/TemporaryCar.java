@@ -73,7 +73,10 @@ public class TemporaryCar extends JFrame {
                 d.add(ok);d.add(cancel);d.add(apply);
                 ok.addActionListener(ec->{
                     if(!path.getText().equals("")){
-                        items.add(new Item(path.getText(),icon.getText(),tag.getText(),new Date().toString()));
+                        items.add(new Item(path.getText(),
+                                icon.getText().equals("")?new NameGetter(path.getText()).getTitle():icon.getText(),
+                                tag.getText(),new Date().toString()));
+                        System.out.println(new NameGetter(path.getText()).getTitle());
                     }
                     Utils.temporaryCar.addChangedNotify();
                     if(!test){
@@ -88,7 +91,9 @@ public class TemporaryCar extends JFrame {
                 });
                 apply.addActionListener(ec->{
                     if(!path.getText().equals("")){
-                        items.add(new Item(path.getText(),icon.getText(),tag.getText(),new Date().toString()));
+                        items.add(new Item(path.getText(),
+                                icon.getText().equals("")?new NameGetter(path.getText()).getTitle():icon.getText(),
+                                tag.getText(),new Date().toString()));
                     }
                 });
                 Utils.temporaryCar.addChangedNotify();
